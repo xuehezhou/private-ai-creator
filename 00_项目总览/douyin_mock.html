@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>抖音创作者中心 · 图文发布（模拟测试页）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; }
+  .header { background: #fff; padding: 12px 24px; border-bottom: 1px solid #e8e8e8; display: flex; align-items: center; gap: 16px; }
+  .header .logo { font-weight: 700; font-size: 18px; color: #111; }
+  .header .breadcrumb { color: #666; font-size: 13px; }
+  .container { max-width: 900px; margin: 24px auto; display: flex; gap: 24px; }
+  .main { flex: 1; background: #fff; border-radius: 8px; padding: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .sidebar { width: 320px; background: #fff; border-radius: 8px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); height: fit-content; position: sticky; top: 24px; }
+  .section { margin-bottom: 24px; }
+  .section-label { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
+  .section-label .required { color: #e74c3c; }
+
+  .upload-area { border: 2px dashed #d0d0d0; border-radius: 8px; padding: 40px 20px; text-align: center; cursor: pointer; transition: border-color 0.2s; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+  .upload-area:hover { border-color: #fe2c55; }
+  .upload-area.has-images { border-style: solid; border-color: #e8e8e8; padding: 16px; flex-direction: row; flex-wrap: wrap; gap: 8px; justify-content: flex-start; }
+  .upload-icon { font-size: 32px; opacity: 0.4; }
+  .upload-text { font-size: 14px; color: #999; }
+  .upload-hint { font-size: 12px; color: #bbb; }
+
+  .thumb { width: 100px; height: 100px; border-radius: 4px; object-fit: cover; border: 1px solid #eee; }
+  .thumb-placeholder { width: 100px; height: 100px; border-radius: 4px; border: 2px dashed #d0d0d0; display: flex; align-items: center; justify-content: center; color: #fe2c55; font-size: 24px; cursor: pointer; }
+
+  .title-input { width: 100%; padding: 10px 12px; border: 1px solid #d9d9d9; border-radius: 6px; font-size: 14px; outline: none; transition: border-color 0.2s; }
+  .title-input:focus { border-color: #fe2c55; }
+  .title-count { text-align: right; font-size: 12px; color: #999; margin-top: 4px; }
+
+  .body-editor { width: 100%; min-height: 160px; padding: 12px; border: 1px solid #d9d9d9; border-radius: 6px; font-size: 14px; outline: none; resize: vertical; font-family: inherit; line-height: 1.6; }
+  .body-editor:focus { border-color: #fe2c55; }
+
+  .tag-input-wrap { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 12px; border: 1px solid #d9d9d9; border-radius: 6px; min-height: 42px; cursor: text; }
+  .tag-input-wrap:focus-within { border-color: #fe2c55; }
+  .tag-chip { background: #fff0f3; color: #fe2c55; padding: 4px 10px; border-radius: 4px; font-size: 13px; display: flex; align-items: center; gap: 4px; }
+  .tag-chip .remove { cursor: pointer; opacity: 0.6; }
+  .tag-input { border: none; outline: none; font-size: 14px; min-width: 120px; flex: 1; padding: 4px 0; }
+  .tag-suggestions { background: #fff; border: 1px solid #e8e8e8; border-radius: 6px; margin-top: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: none; }
+  .tag-suggestions.show { display: block; }
+  .tag-suggestion-item { padding: 8px 12px; font-size: 13px; cursor: pointer; }
+  .tag-suggestion-item:hover { background: #fff0f3; }
+
+  .preview-card { border-radius: 6px; overflow: hidden; border: 1px solid #e8e8e8; }
+  .preview-card .card-header { padding: 8px 12px; font-size: 13px; font-weight: 600; color: #666; background: #fafafa; border-bottom: 1px solid #eee; }
+  .preview-card .card-images { display: flex; gap: 4px; padding: 8px; }
+  .preview-card .card-images img { width: 60px; height: 60px; object-fit: cover; border-radius: 2px; }
+  .preview-card .card-info { padding: 8px 12px; font-size: 13px; }
+  .preview-card .card-title { font-weight: 600; margin-bottom: 4px; }
+  .preview-card .card-tags { color: #2b6de9; font-size: 12px; margin-top: 6px; }
+
+  .publish-btn { width: 100%; padding: 12px; background: #fe2c55; color: #fff; border: none; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 24px; }
+  .publish-btn:hover { background: #e0254a; }
+
+  .status-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #e8e8e8; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: #666; }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #52c41a; display: inline-block; margin-right: 6px; }
+
+  .success-toast { position: fixed; top: 24px; left: 50%; transform: translateX(-50%); background: #52c41a; color: #fff; padding: 12px 24px; border-radius: 6px; font-size: 14px; z-index: 1000; display: none; }
+  .success-toast.show { display: block; animation: fadeIn 0.3s; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateX(-50%) translateY(-10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+
+  .check-result { padding: 8px 12px; border-radius: 4px; margin-bottom: 8px; font-size: 13px; }
+  .check-result.pass { background: #f6ffed; color: #52c41a; border: 1px solid #b7eb8f; }
+  .check-result.fail { background: #fff2f0; color: #e74c3c; border: 1px solid #ffccc7; }
+
+  /* 隐藏真实file input */
+  #realFileInput { display: none; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <span class="logo">📱 抖音创作者中心</span>
+  <span class="breadcrumb">› 内容管理 › 发布图文</span>
+</div>
+
+<div class="container">
+  <div class="main">
+    <!-- 上传区域 -->
+    <div class="section">
+      <div class="section-label"><span class="required">*</span> 上传图片（最多35张）</div>
+      <div class="upload-area" id="uploadArea" onclick="document.getElementById('realFileInput').click()">
+        <span class="upload-icon">📷</span>
+        <span class="upload-text">点击上传图片</span>
+        <span class="upload-hint">支持 JPG / PNG / WebP，单张不超过20MB</span>
+      </div>
+      <input type="file" id="realFileInput" accept="image/*" multiple onchange="handleFileSelect(event)">
+    </div>
+
+    <!-- 标题 -->
+    <div class="section">
+      <div class="section-label"><span class="required">*</span> 标题</div>
+      <input type="text" class="title-input" id="titleInput" placeholder="请输入标题（1-55字）" maxlength="55" oninput="updateTitleCount()">
+      <div class="title-count"><span id="titleCount">0</span>/55</div>
+    </div>
+
+    <!-- 正文 -->
+    <div class="section">
+      <div class="section-label"><span class="required">*</span> 正文</div>
+      <textarea class="body-editor" id="bodyEditor" placeholder="请输入正文内容..."></textarea>
+    </div>
+
+    <!-- 标签 -->
+    <div class="section">
+      <div class="section-label">🏷️ 标签</div>
+      <div class="tag-input-wrap" id="tagWrap" onclick="document.getElementById('tagInput').focus()">
+        <div id="tagChips"></div>
+        <input type="text" class="tag-input" id="tagInput" placeholder="输入标签，回车添加" maxlength="10" onkeydown="handleTagKeydown(event)" oninput="showTagSuggestions()">
+      </div>
+      <div class="tag-suggestions" id="tagSuggestions"></div>
+    </div>
+
+    <!-- 发布按钮 -->
+    <button class="publish-btn" id="publishBtn" onclick="handlePublish()">发 布</button>
+  </div>
+
+  <!-- 预览侧边栏 -->
+  <div class="sidebar">
+    <div class="preview-card">
+      <div class="card-header">📋 发布预览</div>
+      <div class="card-images" id="previewImages">
+        <div style="padding:20px;color:#999;font-size:13px;">上传图片后将在此显示预览</div>
+      </div>
+      <div class="card-info">
+        <div class="card-title" id="previewTitle" style="color:#999;">标题预览</div>
+        <div style="font-size:12px;color:#999;margin-top:4px;" id="previewBody">正文预览</div>
+        <div class="card-tags" id="previewTags"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="status-bar">
+  <span><span class="status-dot"></span>已连接 · 等待操作</span>
+  <span id="stepStatus">就绪</span>
+</div>
+
+<div class="success-toast" id="toast"></div>
+
+<script>
+  // ====== 图片上传 ======
+  const uploadedImages = [];
+
+  function handleFileSelect(event) {
+    const files = Array.from(event.target.files);
+    files.forEach(file => {
+      if (uploadedImages.length >= 35) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        uploadedImages.push({ name: file.name, dataUrl: e.target.result });
+        renderUploadArea();
+        renderPreviewImages();
+      };
+      reader.readAsDataURL(file);
+    });
+    event.target.value = '';
+  }
+
+  function renderUploadArea() {
+    const area = document.getElementById('uploadArea');
+    if (uploadedImages.length === 0) {
+      area.className = 'upload-area';
+      area.innerHTML = '<span class="upload-icon">📷</span><span class="upload-text">点击上传图片</span><span class="upload-hint">支持 JPG / PNG / WebP，单张不超过20MB</span>';
+    } else {
+      area.className = 'upload-area has-images';
+      area.innerHTML = uploadedImages.map((img, i) =>
+        `<img src="${img.dataUrl}" class="thumb" alt="${img.name}" title="${img.name}">`
+      ).join('') + '<div class="thumb-placeholder" onclick="event.stopPropagation(); document.getElementById(\'realFileInput\').click()">+</div>';
+    }
+  }
+
+  function renderPreviewImages() {
+    const container = document.getElementById('previewImages');
+    if (uploadedImages.length === 0) {
+      container.innerHTML = '<div style="padding:20px;color:#999;font-size:13px;">上传图片后将在此显示预览</div>';
+      return;
+    }
+    container.innerHTML = uploadedImages.map(img =>
+      `<img src="${img.dataUrl}" alt="${img.name}">`
+    ).join('');
+  }
+
+  // ====== 标题 ======
+  function updateTitleCount() {
+    const len = document.getElementById('titleInput').value.length;
+    document.getElementById('titleCount').textContent = len;
+    document.getElementById('previewTitle').textContent = document.getElementById('titleInput').value || '标题预览';
+    document.getElementById('previewTitle').style.color = len > 0 ? '#333' : '#999';
+  }
+
+  // ====== 正文实时预览 ======
+  document.getElementById('bodyEditor').addEventListener('input', function() {
+    document.getElementById('previewBody').textContent = this.value || '正文预览';
+    document.getElementById('previewBody').style.color = this.value ? '#333' : '#999';
+  });
+
+  // ====== 标签 ======
+  const tags = [];
+
+  function renderTags() {
+    const container = document.getElementById('tagChips');
+    container.innerHTML = tags.map((tag, i) =>
+      `<span class="tag-chip">#${tag} <span class="remove" onclick="removeTag(${i})">×</span></span>`
+    ).join('');
+    document.getElementById('previewTags').textContent = tags.map(t => '#' + t).join(' ') || '';
+    document.getElementById('tagSuggestions').classList.remove('show');
+  }
+
+  function addTag(text) {
+    const t = text.replace(/^#/, '').trim();
+    if (t && !tags.includes(t) && tags.length < 5) {
+      tags.push(t);
+      renderTags();
+      document.getElementById('tagInput').value = '';
+    }
+  }
+
+  function removeTag(i) {
+    tags.splice(i, 1);
+    renderTags();
+  }
+
+  function handleTagKeydown(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      addTag(event.target.value);
+    }
+  }
+
+  function showTagSuggestions() {
+    const val = document.getElementById('tagInput').value.trim();
+    const suggestions = document.getElementById('tagSuggestions');
+    if (!val) { suggestions.classList.remove('show'); return; }
+    const mock = ['AI学习', 'Python入门', '程序员的日常', '深度学习', '机器学习']
+      .filter(s => s.includes(val) && !tags.includes(s));
+    if (!mock.length) { suggestions.classList.remove('show'); return; }
+    suggestions.innerHTML = mock.map(s =>
+      `<div class="tag-suggestion-item" onclick="addTag('${s}')">#${s}</div>`
+    ).join('');
+    suggestions.classList.add('show');
+  }
+
+  // ====== 状态栏 ======
+  function updateStatus(step) {
+    document.getElementById('stepStatus').textContent = step;
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+  }
+
+  // ====== 发布（模拟） ======
+  function handlePublish() {
+    const title = document.getElementById('titleInput').value;
+    const body = document.getElementById('bodyEditor').value;
+
+    if (uploadedImages.length === 0) {
+      showToast('⚠️ 请先上传图片');
+      return;
+    }
+    if (!title.trim()) {
+      showToast('⚠️ 请填写标题');
+      return;
+    }
+    if (!body.trim()) {
+      showToast('⚠️ 请填写正文');
+      return;
+    }
+
+    // 发布确认（模拟）
+    if (confirm(`确认发布？\n\n标题：${title}\n图片：${uploadedImages.length}张\n标签：${tags.map(t=>'#'+t).join(' ') || '无'}\n\n⚠️ 注意：Agent不点击此按钮，这是模拟的。`)) {
+      showToast('✅ 发布成功！（模拟）');
+    }
+  }
+
+  // ====== Agent可调用的全局API ======
+  window.__agentAPI = {
+    getStatus: function() {
+      return {
+        images: uploadedImages.length,
+        title: document.getElementById('titleInput').value,
+        body: document.getElementById('bodyEditor').value,
+        tags: [...tags],
+        titleCount: document.getElementById('titleInput').value.length,
+        readyToPublish: uploadedImages.length > 0 && document.getElementById('titleInput').value.trim() && document.getElementById('bodyEditor').value.trim()
+      };
+    },
+    fillTitle: function(text) {
+      document.getElementById('titleInput').value = text;
+      updateTitleCount();
+      updateStatus('标题已填入');
+      return { success: true, value: text, length: text.length };
+    },
+    fillBody: function(text) {
+      document.getElementById('bodyEditor').value = text;
+      document.getElementById('previewBody').textContent = text;
+      document.getElementById('previewBody').style.color = '#333';
+      updateStatus('正文已填入');
+      return { success: true, length: text.length };
+    },
+    addTag: function(text) {
+      if (tags.length >= 5) return { success: false, error: '标签数量已达上限(5个)' };
+      if (text.length > 10) return { success: false, error: '标签字数超过10字' };
+      addTag(text);
+      updateStatus(`标签 "${text}" 已添加`);
+      return { success: true, tag: text, totalTags: tags.length };
+    },
+    uploadImage: function(dataUrl, name) {
+      if (uploadedImages.length >= 35) return { success: false, error: '图片数量已达上限(35张)' };
+      uploadedImages.push({ name: name, dataUrl: dataUrl });
+      renderUploadArea();
+      renderPreviewImages();
+      updateStatus(`图片 "${name}" 已上传 (${uploadedImages.length}张)`);
+      return { success: true, name: name, totalImages: uploadedImages.length };
+    },
+    getImages: function() {
+      return uploadedImages.map((img, i) => ({ index: i, name: img.name }));
+    },
+    checkConsistency: function(expected) {
+      const actual = this.getStatus();
+      const checks = [];
+      checks.push({ item: '图片数量', expected: expected.imageCount, actual: actual.images, passed: actual.images === expected.imageCount });
+      checks.push({ item: '标题一致性', expected: expected.title, actual: actual.title, passed: actual.title === expected.title });
+      checks.push({ item: '正文非空', actual: actual.body.length > 0, passed: actual.body.length > 0 });
+      checks.push({ item: '标签数量', expected: expected.tagCount, actual: actual.tags, passed: actual.tags === expected.tagCount });
+      const allPassed = checks.every(c => c.passed);
+      updateStatus(allPassed ? '✅ 自检全部通过' : '❌ 自检不通过');
+      return { allPassed, checks };
+    }
+  };
+
+  console.log('🤖 抖音发布模拟页已就绪');
+  console.log('可用API: window.__agentAPI');
+  console.log('  .fillTitle(text)  - 填写标题');
+  console.log('  .fillBody(text)   - 填写正文');
+  console.log('  .addTag(text)     - 添加标签');
+  console.log('  .checkConsistency({imageCount, title, tagCount}) - 自检');
+  console.log('  .getStatus()      - 获取当前状态');
+</script>
+</body>
+</html>

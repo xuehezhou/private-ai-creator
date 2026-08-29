@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.claude/
+.agents/
+.codex/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Project-specific
+**/node_modules/
+06_技术开发/tools/excalidraw-mcp/
+06_技术开发/data/
+06_技术开发/output/
+06_技术开发/07_发布记录.xlsx
+06_技术开发/07_发布记录.csv
+06_技术开发/app/assets/_cover_preview.png
+06_技术开发/app/assets/app_preview*.png
+02_个人知识库/
+03_我的素材库/
+07_数据资产/
+output/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated or local browser state (cookies, sessions and caches)
+**/douyin_chromium/
+**/douyin_playwright/
+**/BrowserMetrics/
+
+# Sensitive data
+.env
+.env.*
+!.env.example
+*_secret*
+*_private*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json

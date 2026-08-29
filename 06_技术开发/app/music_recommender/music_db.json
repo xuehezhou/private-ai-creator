@@ -1,0 +1,694 @@
+{
+  "_说明": "音乐推荐模块 · 曲库数据库。添加歌曲只需在此新增一条 track 记录，无需改代码。",
+  "_版本": "1.0",
+  "_更新日期": "2026-07-31",
+
+  "version": "1.0",
+  "updated_at": "2026-07-31",
+  "total_tracks": 14,
+
+  "tracks": [
+    {
+      "track_id": "douyin_hot_001",
+      "name": "LOVE SCENARIO",
+      "artist": "iKON",
+      "source": "douyin_hot",
+
+      "mood_tags": ["focus", "calm"],
+      "scene_tags": ["代码编程", "项目开发", "深夜学习"],
+      "theme_keywords": ["代码", "编程", "python", "api", "项目", "调试", "bug"],
+
+      "music_features": {
+        "tempo": "medium",
+        "energy": "medium",
+        "vocal": true,
+        "language": "korean",
+        "genre": "k-pop"
+      },
+
+      "usage": {
+        "douyin_hot_count": "8500w+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 15,
+        "end_sec": 45,
+        "description": "loop段，节奏均匀，剪辑不跳"
+      },
+
+      "recommendation_text": {
+        "reason": "节奏轻快不抢戏，循环感强适合代码推进镜头",
+        "search_hint": "抖音搜索：LOVE SCENARIO iKON"
+      },
+
+      "restrictions": {
+        "avoid_moods": [],
+        "avoid_scenes": ["深沉反思"]
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_002",
+      "name": "Sunflower",
+      "artist": "Post Malone",
+      "source": "douyin_hot",
+
+      "mood_tags": ["focus", "calm", "warm"],
+      "scene_tags": ["代码编程", "深夜学习", "独处时光"],
+      "theme_keywords": ["代码", "编程", "算法", "模型", "训练", "部署"],
+
+      "music_features": {
+        "tempo": "slow",
+        "energy": "low",
+        "vocal": true,
+        "language": "english",
+        "genre": "hip-hop"
+      },
+
+      "usage": {
+        "douyin_hot_count": "1.2亿+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 30,
+        "end_sec": 60,
+        "description": "副歌，旋律稳定情绪不波动"
+      },
+
+      "recommendation_text": {
+        "reason": "慵懒科技感，适合深夜写代码的氛围",
+        "search_hint": "抖音搜索：Sunflower Post Malone"
+      },
+
+      "restrictions": {
+        "avoid_moods": [],
+        "avoid_scenes": ["成果庆祝"]
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_003",
+      "name": "Faded",
+      "artist": "Alan Walker",
+      "source": "douyin_hot",
+
+      "mood_tags": ["focus", "tech", "energetic"],
+      "scene_tags": ["代码编程", "技术突破", "成果展示"],
+      "theme_keywords": ["ai", "人工智能", "神经网络", "深度学习", "数据"],
+
+      "music_features": {
+        "tempo": "medium",
+        "energy": "high",
+        "vocal": true,
+        "language": "english",
+        "genre": "electronic"
+      },
+
+      "usage": {
+        "douyin_hot_count": "2.1亿+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 40,
+        "end_sec": 70,
+        "description": "drop段，高潮但不炸，适合展示成果"
+      },
+
+      "recommendation_text": {
+        "reason": "电子渐进从平静到饱满，配合技术突破叙事",
+        "search_hint": "抖音搜索：Faded Alan Walker"
+      },
+
+      "restrictions": {
+        "avoid_moods": [],
+        "avoid_scenes": ["生活日常"]
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_004",
+      "name": "夜空中最亮的星",
+      "artist": "逃跑计划",
+      "source": "douyin_hot",
+
+      "mood_tags": ["focus", "growth", "warm"],
+      "scene_tags": ["深夜反思", "目标坚定", "转行路上"],
+      "theme_keywords": ["坚持", "目标", "方向", "迷茫", "转行"],
+
+      "music_features": {
+        "tempo": "medium",
+        "energy": "medium",
+        "vocal": true,
+        "language": "chinese",
+        "genre": "rock"
+      },
+
+      "usage": {
+        "douyin_hot_count": "1.8亿+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 35,
+        "end_sec": 65,
+        "description": "副歌，情绪完整起落"
+      },
+
+      "recommendation_text": {
+        "reason": "抖音常驻热门，辨识度极高，配合'找到方向'叙事",
+        "search_hint": "抖音搜索：夜空中最亮的星 逃跑计划"
+      },
+
+      "restrictions": {
+        "avoid_moods": [],
+        "avoid_scenes": []
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_005",
+      "name": "可能",
+      "artist": "程响",
+      "source": "douyin_hot",
+
+      "mood_tags": ["growth", "warm"],
+      "scene_tags": ["成长记录", "感悟时刻", "普通人的故事"],
+      "theme_keywords": ["成长", "坚持", "感悟", "转行", "改变", "努力"],
+
+      "music_features": {
+        "tempo": "slow",
+        "energy": "medium",
+        "vocal": true,
+        "language": "chinese",
+        "genre": "pop"
+      },
+
+      "usage": {
+        "douyin_hot_count": "1.5亿+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 25,
+        "end_sec": 55,
+        "description": "副歌段，情绪完整起落"
+      },
+
+      "recommendation_text": {
+        "reason": "副歌情绪饱满不煽情，配合成长旁白最百搭",
+        "search_hint": "抖音搜索：可能 程响"
+      },
+
+      "restrictions": {
+        "avoid_moods": [],
+        "avoid_scenes": []
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_006",
+      "name": "起风了",
+      "artist": "买辣椒也用券",
+      "source": "douyin_hot",
+
+      "mood_tags": ["growth", "warm"],
+      "scene_tags": ["成长记录", "回忆感慨", "时间流逝"],
+      "theme_keywords": ["成长", "时间", "回忆", "变化", "青春"],
+
+      "music_features": {
+        "tempo": "medium",
+        "energy": "medium",
+        "vocal": true,
+        "language": "chinese",
+        "genre": "pop"
+      },
+
+      "usage": {
+        "douin_hot_count": "9300w+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 50,
+        "end_sec": 80,
+        "description": "第二段副歌，情绪最高点"
+      },
+
+      "recommendation_text": {
+        "reason": "国民级抖音热歌，情绪从平静到释放",
+        "search_hint": "抖音搜索：起风了 买辣椒也用券"
+      },
+
+      "restrictions": {
+        "avoid_moods": [],
+        "avoid_scenes": []
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_007",
+      "name": "少年",
+      "artist": "梦然",
+      "source": "douyin_hot",
+
+      "mood_tags": ["growth", "energetic"],
+      "scene_tags": ["热血时刻", "坚持不退", "青春宣言"],
+      "theme_keywords": ["年轻", "热血", "不服输", "冲", "04年"],
+
+      "music_features": {
+        "tempo": "fast",
+        "energy": "high",
+        "vocal": true,
+        "language": "chinese",
+        "genre": "pop"
+      },
+
+      "usage": {
+        "douyin_hot_count": "2.5亿+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 30,
+        "end_sec": 60,
+        "description": "副歌，节奏明快情绪上扬"
+      },
+
+      "recommendation_text": {
+        "reason": "年轻不服输的劲儿，配合'还在学'的人设",
+        "search_hint": "抖音搜索：少年 梦然"
+      },
+
+      "restrictions": {
+        "avoid_moods": ["calm"],
+        "avoid_scenes": ["深夜反思", "独处时光"]
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_008",
+      "name": "你的答案",
+      "artist": "阿冗",
+      "source": "douyin_hot",
+
+      "mood_tags": ["growth", "energetic"],
+      "scene_tags": ["突破瞬间", "坚持到底", "困难克服"],
+      "theme_keywords": ["困难", "卡住", "突破", "答案", "解决"],
+
+      "music_features": {
+        "tempo": "medium",
+        "energy": "high",
+        "vocal": true,
+        "language": "chinese",
+        "genre": "pop"
+      },
+
+      "usage": {
+        "douyin_hot_count": "1.1亿+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 40,
+        "end_sec": 70,
+        "description": "副歌，爆发段配合突破瞬间"
+      },
+
+      "recommendation_text": {
+        "reason": "从低谷到爆发，适合'卡了两天终于跑通'的叙事",
+        "search_hint": "抖音搜索：你的答案 阿冗"
+      },
+
+      "restrictions": {
+        "avoid_moods": [],
+        "avoid_scenes": ["生活日常"]
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_009",
+      "name": "星辰大海",
+      "artist": "黄霄雲",
+      "source": "douyin_hot",
+
+      "mood_tags": ["growth", "warm"],
+      "scene_tags": ["展望未来", "目标远方", "结尾升华"],
+      "theme_keywords": ["目标", "远方", "梦想", "未来", "规划"],
+
+      "music_features": {
+        "tempo": "medium",
+        "energy": "medium",
+        "vocal": true,
+        "language": "chinese",
+        "genre": "pop"
+      },
+
+      "usage": {
+        "douyin_hot_count": "1.3亿+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 35,
+        "end_sec": 65,
+        "description": "副歌渐强段，配合文案升华"
+      },
+
+      "recommendation_text": {
+        "reason": "大气但不鸡汤，适合结尾升华/下周预告",
+        "search_hint": "抖音搜索：星辰大海 黄霄雲"
+      },
+
+      "restrictions": {
+        "avoid_moods": [],
+        "avoid_scenes": []
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_010",
+      "name": "轻快ukulele",
+      "artist": "纯音乐",
+      "source": "douyin_hot",
+
+      "mood_tags": ["life", "calm", "warm"],
+      "scene_tags": ["生活日常", "学习间隙", "松弛时光"],
+      "theme_keywords": ["生活", "日常", "咖啡", "放松", "周末"],
+
+      "music_features": {
+        "tempo": "medium",
+        "energy": "low",
+        "vocal": false,
+        "language": "instrumental",
+        "genre": "ukulele"
+      },
+
+      "usage": {
+        "douyin_hot_count": "6000w+",
+        "suitable_content_type": ["image_text"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 0,
+        "end_sec": 30,
+        "description": "全程可用，节奏轻快不拖沓"
+      },
+
+      "recommendation_text": {
+        "reason": "阳光生活气，适合生活照/学习间隙的松弛镜头",
+        "search_hint": "抖音搜索：轻快ukulele"
+      },
+
+      "restrictions": {
+        "avoid_moods": [],
+        "avoid_scenes": ["成果庆祝", "技术突破"]
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_011",
+      "name": "Mojito",
+      "artist": "周杰伦",
+      "source": "douyin_hot",
+
+      "mood_tags": ["life", "calm", "warm"],
+      "scene_tags": ["生活日常", "轻松时刻", "夏日"],
+      "theme_keywords": ["生活", "夏天", "轻松", "开心", "日常"],
+
+      "music_features": {
+        "tempo": "medium",
+        "energy": "medium",
+        "vocal": true,
+        "language": "chinese",
+        "genre": "latin-pop"
+      },
+
+      "usage": {
+        "douyin_hot_count": "1.0亿+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 0,
+        "end_sec": 30,
+        "description": "前奏+第一段，节奏轻快"
+      },
+
+      "recommendation_text": {
+        "reason": "轻松愉快不抢戏，生活照百搭",
+        "search_hint": "抖音搜索：Mojito 周杰伦"
+      },
+
+      "restrictions": {
+        "avoid_moods": [],
+        "avoid_scenes": ["深夜反思", "技术突破"]
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_012",
+      "name": "孤勇者",
+      "artist": "陈奕迅",
+      "source": "douyin_hot",
+
+      "mood_tags": ["life", "growth", "energetic"],
+      "scene_tags": ["独处时光", "深夜坚持", "一个人的战斗"],
+      "theme_keywords": ["孤独", "一个人", "深夜", "坚持", "不被理解"],
+
+      "music_features": {
+        "tempo": "medium",
+        "energy": "high",
+        "vocal": true,
+        "language": "chinese",
+        "genre": "pop"
+      },
+
+      "usage": {
+        "douyin_hot_count": "3.0亿+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 45,
+        "end_sec": 75,
+        "description": "副歌，情绪最饱满段"
+      },
+
+      "recommendation_text": {
+        "reason": "抖音现象级热歌，'一个人的战斗'共鸣极强",
+        "search_hint": "抖音搜索：孤勇者 陈奕迅"
+      },
+
+      "restrictions": {
+        "avoid_moods": ["calm"],
+        "avoid_scenes": ["生活日常", "轻松时刻"]
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_013",
+      "name": "Industry Baby",
+      "artist": "Lil Nas X",
+      "source": "douyin_hot",
+
+      "mood_tags": ["tech", "energetic"],
+      "scene_tags": ["成果展示", "项目发布", "自信时刻"],
+      "theme_keywords": ["项目", "成果", "demo", "展示", "发布"],
+
+      "music_features": {
+        "tempo": "fast",
+        "energy": "high",
+        "vocal": true,
+        "language": "english",
+        "genre": "hip-hop"
+      },
+
+      "usage": {
+        "douyin_hot_count": "7800w+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 10,
+        "end_sec": 40,
+        "description": "hook段，节奏抓耳配合成果展示"
+      },
+
+      "recommendation_text": {
+        "reason": "自信展示感，适合'看我做出来的东西'",
+        "search_hint": "抖音搜索：Industry Baby Lil Nas X"
+      },
+
+      "restrictions": {
+        "avoid_moods": ["calm", "warm"],
+        "avoid_scenes": ["深夜反思", "独处时光"]
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    },
+    {
+      "track_id": "douyin_hot_014",
+      "name": "Unstoppable",
+      "artist": "Sia",
+      "source": "douyin_hot",
+
+      "mood_tags": ["tech", "energetic", "growth"],
+      "scene_tags": ["成果庆祝", "里程碑", "突破时刻"],
+      "theme_keywords": ["突破", "里程碑", "完成", "上线", "成功"],
+
+      "music_features": {
+        "tempo": "medium",
+        "energy": "high",
+        "vocal": true,
+        "language": "english",
+        "genre": "pop"
+      },
+
+      "usage": {
+        "douyin_hot_count": "1.0亿+",
+        "suitable_content_type": ["image_text", "short_video"],
+        "best_duration_sec": 30
+      },
+
+      "clip_suggestion": {
+        "start_sec": 30,
+        "end_sec": 60,
+        "description": "副歌爆发段，配合'从0到1'的高光时刻"
+      },
+
+      "recommendation_text": {
+        "reason": "渐进爆发，配合'从0到1做出来了'的高光时刻",
+        "search_hint": "抖音搜索：Unstoppable Sia"
+      },
+
+      "restrictions": {
+        "avoid_moods": ["calm"],
+        "avoid_scenes": ["生活日常", "深夜反思"]
+      },
+
+      "metadata": {
+        "added_at": "2026-07-15",
+        "added_by": "manual_curation",
+        "last_used_at": null,
+        "use_count": 0,
+        "user_rating": 0
+      }
+    }
+  ],
+
+  "fallback_track_ids": ["douyin_hot_006", "douyin_hot_007", "douyin_hot_004"],
+  "fallback_description": "默认兜底推荐：起风了(通用成长)、少年(热血青春)、夜空中最亮的星(坚持方向)，三首情绪互补，覆盖 majority 场景",
+
+  "default_moods": {
+    "focus":  ["douyin_hot_001", "douyin_hot_002", "douyin_hot_004"],
+    "growth": ["douyin_hot_005", "douyin_hot_006", "douyin_hot_007"],
+    "life":   ["douyin_hot_010", "douyin_hot_011", "douyin_hot_012"],
+    "tech":   ["douyin_hot_013", "douyin_hot_014", "douyin_hot_003"]
+  }
+}

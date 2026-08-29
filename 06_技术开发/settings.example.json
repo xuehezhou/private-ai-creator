@@ -1,0 +1,10 @@
+{
+  "engine": "offline",
+  "api_key": "",
+  "api_url": "https://api.deepseek.com/v1/chat/completions",
+  "api_model": "deepseek-chat",
+  "account_name": "",
+  "age": "",
+  "output_dir": "",
+  "cover_tagline": ""
+}
